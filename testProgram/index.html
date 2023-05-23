@@ -5,9 +5,20 @@
 		<title>My first three.js app</title>
 		<style>
 			body { margin: 0; }
+
+			#info {
+				position: absolute;
+				top: 10px;
+				width: 100%;
+				color: white;
+				text-align: center;
+				z-index: 100;
+				display:block;
+			}
 		</style>
 	</head>
 	<body>
+		<div id="info">Description</div>
 		<script type="module" src="/main.js"></script>
 	</body>
 </html>
