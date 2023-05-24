@@ -30,16 +30,25 @@ controls.update();
 const scene = new THREE.Scene();
 //scene.background = new THREE.Color(0xffffff);
 
+// add the axe x y z 
+const axesHelper = new THREE.AxesHelper( 30 );
+scene.add( axesHelper );
+
 // create a cube 
 const box_geometry = new THREE.BoxGeometry( 10, 10, 10 );
-const boxMaterial = new THREE.MeshLambertMaterial( { color: 0x00ff00 } );
+const boxMaterial = new THREE.MeshLambertMaterial( { color: 0x00ff00,
+    transparent: true,
+    opacity: 0.5
+
+} );
 const cube = new THREE.Mesh( box_geometry, boxMaterial );
+cube.position.set(10, 10, 10)
 scene.add( cube );
 
 // create the lines
 const lineMaterial = new THREE.LineBasicMaterial({ color: 0x00ff00 }); 
 const points = [];
-points.push( new THREE.Vector3(-10, 0, 0));
+points.push( new THREE.Vector3(0, 0, 10));
 points.push( new THREE.Vector3(0, 10, 0));
 points.push( new THREE.Vector3(10, 0, 0));
 
